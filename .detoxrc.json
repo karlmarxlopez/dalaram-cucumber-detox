@@ -1,0 +1,22 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "configurations": {
+    "ios": {
+      "type": "ios.simulator",
+      "build": "xcodebuild -workspace ios/rnsandbox.xcworkspace -scheme rnsandbox -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      "binaryPath": "./ios/build/Build/Products/Debug-iphonesimulator/rnsandbox.app",
+      "device": {
+        "type": "iPhone 8"
+      }
+    },
+    "android": {
+      "type": "android.emulator",
+      "build": "cd android && ./gradlew assembleAndroidTest",
+      "binaryPath": "./android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "device": {
+        "avdName": "Pixel_3a_API_29"
+      }
+    }
+  }
+}
