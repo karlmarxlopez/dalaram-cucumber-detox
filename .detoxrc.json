@@ -2,9 +2,17 @@
   "testRunner": "jest",
   "runnerConfig": "e2e/config.json",
   "configurations": {
-    "ios": {
+    "ios.sim.debug": {
       "type": "ios.simulator",
       "build": "xcodebuild -workspace ios/rnsandbox.xcworkspace -scheme rnsandbox -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      "binaryPath": "./ios/build/Build/Products/Debug-iphonesimulator/rnsandbox.app",
+      "device": {
+        "type": "iPhone 8"
+      }
+    },
+    "ios.sim.release": {
+      "type": "ios.simulator",
+      "build": "xcodebuild -workspace ios/rnsandbox.xcworkspace -scheme rnsandbox -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
       "binaryPath": "./ios/build/Build/Products/Debug-iphonesimulator/rnsandbox.app",
       "device": {
         "type": "iPhone 8"

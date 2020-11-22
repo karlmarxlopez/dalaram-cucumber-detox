@@ -11,10 +11,12 @@
     "android:clean": "cd android && ./gradlew clean",
     "detox:buildAndroidDebug": "detox build -c android.emu.debug",
     "detox:buildAndroidRelease": "detox build -c android.emu.release",
-    "detox:buildIOS": "detox build -c ios",
+    "detox:buildIosDebug": "detox build -c ios.sim.debug",
+    "detox:buildIosRelease": "detox build -c ios.sim.release",
     "detox:testAndroidDebug": "detox test -c android.emu.debug",
     "detox:testAndroidRelease": "detox test -c android.emu.release",
-    "detox:testIOS": "detox test -c ios"
+    "detox:testIosDebug": "detox test -c ios.sim.debug",
+    "detox:testIosRelease": "detox test -c ios.sim.release"
   },
   "dependencies": {
     "react": "16.13.1",
