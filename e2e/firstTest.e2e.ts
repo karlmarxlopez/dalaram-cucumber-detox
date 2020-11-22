@@ -22,8 +22,12 @@ describe('Example', () => {
     await expect(element(by.text('World!'))).toBeVisible();
 
     await element(by.id('world_button')).tap();
-    await expect(element(by.text('World!'))).not.toBeVisible();
+    await expect(element(by.text('World!'))).toBeNotVisible();
+  });
+
+  it('should accept user name', async () => {
+    await element(by.label('Full name input')).atIndex(0).typeText('John Doe');
+    await element(by.label('Greet button')).tap();
+    await expect(element(by.text('Hello, John Doe!'))).toBeVisible();
   });
 });
-
-export {};
