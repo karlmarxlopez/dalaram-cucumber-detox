@@ -1,6 +1,13 @@
 {
   "testRunner": "jest",
   "runnerConfig": "e2e/config.json",
+  "detox": {
+    "behavior": {
+      "init": {
+        "exposeGlobals": false
+      }
+    }
+  },
   "configurations": {
     "ios.sim.debug": {
       "type": "ios.simulator",
