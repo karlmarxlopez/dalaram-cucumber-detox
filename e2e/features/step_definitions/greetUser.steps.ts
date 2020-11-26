@@ -1,30 +1,5 @@
-import {
-  Before,
-  Given,
-  setDefaultTimeout,
-  Then,
-  When,
-  After,
-  BeforeAll,
-} from '@cucumber/cucumber';
-import {by, device, element, expect, init, cleanup} from 'detox';
-import detoxConfig from '../../../.detoxrc.js';
-
-setDefaultTimeout(120 * 1000);
-
-BeforeAll({timeout: 120 * 1000}, async () => {
-  await init(detoxConfig, {
-    launchApp: true,
-  });
-});
-
-After(async () => {
-  await cleanup();
-});
-
-Before(async () => {
-  await device.reloadReactNative();
-});
+import {Given, Then, When} from '@cucumber/cucumber';
+import {by, element, expect} from 'detox';
 
 Given('name is {string}', async (givenName: string) => {
   // I need to call atIndex(0) because it's finding multiple nodes on iOS
