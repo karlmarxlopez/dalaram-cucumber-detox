@@ -1,15 +1,18 @@
 import {
-  Given,
   Before,
+  Given,
+  setDefaultTimeout,
   Then,
   When,
-  setDefaultTimeout,
   After,
+  BeforeAll,
 } from '@cucumber/cucumber';
-import {init, beforeEach, by, device, element, expect, cleanup} from 'detox';
-import detoxConfig from '../../../.detoxrc.json';
+import {by, device, element, expect, init, cleanup} from 'detox';
+import detoxConfig from '../../../.detoxrc.js';
 
-Before({timeout: 120 * 1000}, async () => {
+setDefaultTimeout(120 * 1000);
+
+BeforeAll({timeout: 120 * 1000}, async () => {
   await init(detoxConfig, {
     launchApp: true,
   });
@@ -19,25 +22,19 @@ After(async () => {
   await cleanup();
 });
 
-setDefaultTimeout(60 * 1000);
-
-// beforeEach(async () => {
-//   await device.reloadReactNative();
-// });
+Before(async () => {
+  await device.reloadReactNative();
+});
 
 Given('name is {string}', async (givenName: string) => {
-  return 'pending';
-  // await element(by.label('Full name input')).atIndex(0).typeText(givenName);
+  // I need to call atIndex(0) because it's finding multiple nodes on iOS
+  await element(by.label('Full name input')).atIndex(0).typeText(givenName);
 });
 
 When('I tap Greet button', async () => {
-  return 'pending';
-
-  // await element(by.label('Greet button')).tap();
+  await element(by.label('Greet button')).tap();
 });
 
 Then('I should be greeted with {string}', async (expectedGreeting: string) => {
-  return 'pending';
-
-  // await expect(element(by.text(expectedGreeting))).toBeVisible();
+  await expect(element(by.text(expectedGreeting))).toBeVisible();
 });
