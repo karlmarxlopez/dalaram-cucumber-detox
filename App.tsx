@@ -10,7 +10,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text accessibilityLabel="welcome" style={styles.welcomeText}>
-        Welcome to Detox + Cucumber
+        Dalaram Detox + Cucumber
       </Text>
       {showHello ? <Text>Hello!</Text> : null}
       {showWorld ? <Text>World!</Text> : null}
@@ -29,9 +29,6 @@ const App = () => {
         accessibilityLabel="Full name input"
         placeholderTextColor="white"
         onChangeText={setName}
-        style={{
-          color: 'white',
-        }}
         placeholder="Your name here"
       />
       <Button
@@ -39,9 +36,7 @@ const App = () => {
         accessibilityLabel="Greet button"
         onPress={() => setShowGreeting((prev) => !prev)}
       />
-      {showGreeting ? (
-        <Text style={{color: 'white'}}>Hello, {name}!</Text>
-      ) : null}
+      {showGreeting ? <Text>Hello, {name}!</Text> : null}
     </SafeAreaView>
   );
 };
@@ -51,9 +46,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#010101',
   },
-  welcomeText: {fontSize: 20, fontWeight: '800', color: 'white'},
+  welcomeText: {fontSize: 20, fontWeight: '800'},
 });
 
 export default App;
