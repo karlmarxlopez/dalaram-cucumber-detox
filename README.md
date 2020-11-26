@@ -1,5 +1,6 @@
 ## Dalaram Cucumber + Detox Example
 
+Sample automated test running on iPhone 8
 ![DEMO GIF](/cucumber-detox-demo.gif "DEMO GIF")
 
 Explore the test files inside `e2e/features`
