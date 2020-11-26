@@ -9,15 +9,14 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "android:clean": "cd android && ./gradlew clean",
-    "detox:buildAndroidDebug": "detox build -c android.emu.debug",
-    "detox:buildAndroidRelease": "detox build -c android.emu.release",
-    "detox:buildIosDebug": "detox build -c ios.sim.debug",
-    "detox:buildIosRelease": "detox build -c ios.sim.release",
-    "detox:testAndroidDebug": "detox test -c android.emu.debug",
-    "detox:testAndroidRelease": "detox test -c android.emu.release",
-    "detox:testIosDebug": "detox test -c ios.sim.debug",
-    "detox:testIosRelease": "detox test -c ios.sim.release",
-    "cucumber": "cucumber-js"
+    "detox:buildAndroidDebug": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=debug detox build",
+    "detox:buildAndroidRelease": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=release detox build",
+    "detox:buildIosDebug": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=debug detox build",
+    "detox:buildIosRelease": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=release detox build",
+    "detox:testAndroidDebug": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=debug cucumber-js",
+    "detox:testAndroidRelease": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=release cucumber-js",
+    "detox:testIosDebug": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=debug cucumber-js",
+    "detox:testIosRelease": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=release cucumber-js"
   },
   "dependencies": {
     "react": "16.13.1",
