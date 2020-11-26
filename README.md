@@ -1,5 +1,7 @@
 ## Dalaram Cucumber + Detox Example
 
+![DEMO GIF](/cucumber-detox-demo.gif "DEMO GIF")
+
 Explore the test files inside `e2e/features`
 
 Run this before starting the test
