@@ -16,7 +16,8 @@
     "detox:testAndroidDebug": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=debug cucumber-js",
     "detox:testAndroidRelease": "DETOX_PLATFORM=android DETOX_BUILD_FLAVOR=release cucumber-js",
     "detox:testIosDebug": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=debug cucumber-js",
-    "detox:testIosRelease": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=release cucumber-js"
+    "detox:testIosRelease": "DETOX_PLATFORM=ios DETOX_BUILD_FLAVOR=release cucumber-js",
+    "postinstall": "npx patch-package"
   },
   "dependencies": {
     "react": "16.13.1",

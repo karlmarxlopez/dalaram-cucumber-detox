@@ -57,9 +57,10 @@ module.exports = {
   detox: {
     behavior: {
       init: {
-        exposeGlobals: false
-      }
-    }
+        exposeGlobals: false,
+        reuse: true,
+      },
+    },
   },
   configurations: setConfiguration(),
 }
